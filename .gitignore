@@ -1,0 +1,11 @@
+# build output
+order_optimizer
+*.o
+*.exe
+*.out
+optimizer_test_dataset.tmp
+
+# editor and OS files
+.vscode/
+.idea/
+.DS_Store

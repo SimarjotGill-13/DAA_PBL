@@ -1,0 +1,59 @@
+# Built-in sample dataset (same data as the program starts with).
+# Small on purpose: every test case can be traced by hand.
+nodes 9
+node 0 W1
+node 1 W2
+node 2 W3
+node 3 HubA
+node 4 HubB
+node 5 HubC
+node 6 CustX
+node 7 CustY
+node 8 CustZ          # no roads: unreachable
+
+# two-way roads: road FROM TO DISTANCE
+road 0 3 4
+road 1 4 6
+road 2 5 5
+road 3 4 3
+road 4 5 2
+road 3 6 2
+road 4 6 5
+road 5 7 3
+road 4 7 7
+
+product 101 Phone
+product 102 Earbuds
+product 103 Charger
+
+# warehouse ID NAME NODE HANDLING_FEE
+warehouse 1 W1 0 5
+warehouse 2 W2 1 2
+warehouse 3 W3 2 4
+
+# inventory PRODUCT WAREHOUSE TOTAL DAMAGED RESERVED
+inventory 101 1 10 0 0
+inventory 101 2 0 0 0
+inventory 101 3 5 0 0
+inventory 102 1 1 0 0
+inventory 102 2 8 0 0
+inventory 102 3 0 0 0
+inventory 103 1 6 2 0
+inventory 103 2 6 0 0
+inventory 103 3 6 0 0
+
+# serviceable PIN codes: pin PIN NODE
+pin 100001 6
+pin 100002 7
+pin 100003 8
+
+# average weekly demand: demand PRODUCT WAREHOUSE UNITS
+demand 101 1 2
+demand 101 2 6
+demand 101 3 1
+demand 102 1 1
+demand 102 2 1
+demand 102 3 3
+demand 103 1 2
+demand 103 2 2
+demand 103 3 2

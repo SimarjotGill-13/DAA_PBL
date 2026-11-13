@@ -1,0 +1,82 @@
+# Larger dataset: 4 warehouses, 5 products, 6 customer areas, 3 hubs, one-way roads.
+# Try: load it from the menu, then order PIN 560001 for product 202, or PIN 560006 (unreachable).
+nodes 13
+node 0 W1
+node 1 W2
+node 2 W3
+node 3 W4
+node 4 HubN
+node 5 HubS
+node 6 HubE
+node 7 A1
+node 8 A2
+node 9 A3
+node 10 A4
+node 11 A5
+node 12 A6            # isolated: no roads
+
+road 0 4 3
+road 1 4 5
+road 1 5 4
+road 2 5 2
+road 3 6 3
+road 4 5 2
+road 5 6 4
+arc 6 4 3             # one-way: HubE -> HubN
+arc 4 6 7             # one-way: HubN -> HubE (slower coming back)
+road 7 4 2
+road 8 4 4
+road 8 5 3
+road 9 5 5
+road 10 6 2
+road 11 6 6
+
+product 201 Laptop
+product 202 Phone
+product 203 Earbuds
+product 204 Charger
+product 205 Cable
+
+warehouse 1 W1 0 4
+warehouse 2 W2 1 3
+warehouse 3 W3 2 5
+warehouse 4 W4 3 2
+
+inventory 201 1 6 0 0
+inventory 201 2 3 1 0
+inventory 201 3 0 0 0
+inventory 201 4 4 0 1
+inventory 202 1 20 2 0
+inventory 202 2 15 0 3
+inventory 202 3 8 0 0
+inventory 202 4 0 0 0
+inventory 203 2 12 0 0
+inventory 203 3 5 5 0       # every unit damaged
+inventory 203 4 9 1 2
+inventory 204 1 10 0 0
+inventory 204 3 2 0 0
+inventory 204 4 7 0 0
+inventory 205 1 30 0 5
+inventory 205 2 25 0 0
+inventory 205 3 10 0 0
+inventory 205 4 18 0 0
+
+pin 560001 7
+pin 560002 8
+pin 560003 9
+pin 560004 10
+pin 560005 11
+pin 560006 12
+
+demand 201 1 2
+demand 201 4 3
+demand 202 1 6
+demand 202 2 5
+demand 202 3 2
+demand 202 4 4
+demand 203 2 3
+demand 203 4 4
+demand 204 1 2
+demand 204 3 2
+demand 205 1 8
+demand 205 4 5
